@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartCookBD — Online Store</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><span class="bag">♧</span><b id="storeName">SmartCookBD</b></div>
+  <nav><a class="active" href="#home">⌂ <span>Home</span></a><a href="#categories">⊞ <span>Categories</span></a><a href="#deals">◇ <span>Deals</span></a><a href="#products">♧ <span>All Products</span></a><a href="#wishlist">♡ <span>Wishlist</span></a></nav>
+  <div class="side-sale"><small>বিশেষ অফার</small><h3>Kitchen Deals</h3><p>রান্নাঘরের প্রয়োজনীয় পণ্যে দারুণ অফার।</p><button onclick="scrollToProducts()">Shop Now →</button><div class="sale-icon">%</div></div>
+  <div class="side-bottom"><span>☏ Need Help?</span><small>Customer support</small><button class="light" onclick="openAdmin()">⚙ Admin Login</button></div>
+</aside>
+<main class="main" id="home">
+  <header class="topbar"><div class="mobile-brand">♧ SmartCookBD</div><label class="search">⌕ <input id="searchInput" placeholder="চুলা, কুকওয়্যার ও কিচেন পণ্য খুঁজুন..." oninput="renderProducts()"></label><button class="icon-btn" onclick="showWishlist()">♡ Wishlist</button><button class="icon-btn" onclick="openCart()">🛒 <span id="cartCount">0</span></button><button class="profile login-top" onclick="openAdmin()">♙ <span>Admin Login</span></button></header>
+  <section class="hero"><div class="hero-copy"><span class="pill">SMARTCOOKBD KITCHEN STORE</span><h1 id="heroTitle">রান্নাঘরের সব প্রয়োজন,<br>এক জায়গায় ✦</h1><p id="heroText">গ্যাস চুলা, কুকওয়্যার ও কিচেন অ্যাক্সেসরিজ—সহজে অর্ডার করুন。</p><button class="primary" onclick="scrollToProducts()">Shop Now →</button></div><div class="hero-art"><div class="orb orb1"></div><div class="orb orb2"></div><div class="hero-bag">✦</div></div></section>
+  <section class="category-row" id="categories"><button onclick="filterCategory('All')">✦<small>All</small></button><button onclick="filterCategory('Gas Stove')">🔥<small>গ্যাস চুলা</small></button><button onclick="filterCategory('Gas Safety')">🛡️<small>গ্যাস সেফটি</small></button><button onclick="filterCategory('Cookware')">🍳<small>কুকওয়্যার</small></button><button onclick="filterCategory('Gas Accessories')">🔧<small>গ্যাস অ্যাক্সেসরিজ</small></button><button onclick="filterCategory('Kitchen Accessories')">🥄<small>কিচেন অ্যাক্সেসরিজ</small></button></section>
+  <section class="promo-grid" id="deals"><article class="promo peach"><b>কিচেন অফার</b><p>সীমিত সময়ের অফার</p><strong>দারুণ সাশ্রয়</strong><span>⌁</span></article><article class="promo mint"><b>Free Shipping</b><p>On qualifying orders</p><strong>Shop now →</strong><span>▧</span></article><article class="promo sand"><b>নতুন পণ্য</b><p>নতুন কিচেন কালেকশন</p><strong>Explore →</strong><span>✧</span></article></section>
+  <div class="section-heading" id="products"><div><h2>কিচেনের জনপ্রিয় পণ্য</h2><p>আপনার রান্নাঘরের জন্য বাছাই করা পণ্য</p></div><button class="text-btn" onclick="filterCategory('All')">View all →</button></div>
+  <section class="product-grid" id="productGrid"></section>
+  <div class="section-heading"><div><h2>আপনার জন্য আরও পণ্য</h2><p>আরও কিচেন ও রান্নার সামগ্রী</p></div></div><section class="product-grid" id="recommendedGrid"></section>
+  <footer><span>◇ Secure ordering</span><span>↻ সহজ অর্ডার</span><span>☏ Customer support</span><span>☆ Trusted service</span></footer>
+</main>
+<aside class="cart-panel" id="cartPanel"><div class="cart-head"><h3>My Cart (<span id="cartCount2">0</span>)</h3><button onclick="closeCart()">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-total"><div><span>Subtotal</span><b id="subtotal">৳0</b></div><div><span>Delivery</span><b>Calculated at checkout</b></div><div class="total"><span>Total</span><b id="total">৳0</b></div><button class="primary wide" onclick="openCheckout()">Confirm Order →</button><small>আপনার তথ্য দিয়ে অর্ডার নিশ্চিত করুন</small></div></aside>
+</div>
+<div class="modal-backdrop" id="modalBackdrop" onclick="backdropClose(event)"><section class="modal" id="modal"></section></div>
+<script src="app.js"></script>
+</body></html>
